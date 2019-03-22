@@ -1,6 +1,6 @@
 CPP = g++
 RM = rm -f
-CPP_FLAGS = -o
+CPP_FLAGS = -o -I./googletest/include
 OBJECTS := $(patsubst %.cpp,%.o,$(wildcard *.cpp))
 ARTIFACT_NAME = db.o
 
