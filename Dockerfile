@@ -10,6 +10,8 @@ RUN \
 	apt-get install g++ -y && \
 	apt-get install make -y && \
 	apt-get install ruby -y && \
+	apt-get install wget -y && \
+	apt-get install vim -y && \
 	apt-get install unzip -y && \
 	gem install rspec
 
