@@ -1,8 +1,10 @@
 #include <gtest/gtest.h>
+#include <string>
+using std::string;
 
 #include "../src/Utils.h"
 
-TEST(testTimesTwo, integerTests){
+TEST(testUtils, parseInsertStatement){
 	Row* insertRow = new Row;
 	string target = "insert 1 a q";
 
