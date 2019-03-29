@@ -8,6 +8,8 @@ using std::cout;
 using std::stoul;
 using std::string;
 
+#include <cctype>
+
 #include <vector>
 using std::vector;
 
@@ -19,7 +21,7 @@ int parseInsertStatement(const string& target, Row& insertRow) {
 
   for (int i = 0; i < target.length(); i++) {
     // check if space char
-    if (target[i] == char(32)) {
+    if (isspace(target[i])) {
       string tmp(buffer);
       words.push_back(tmp);
       buffer.clear();
