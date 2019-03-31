@@ -27,8 +27,3 @@ TEST(testUtils, parseInsertStatement){
 	EXPECT_STREQ("ema@company.com", row->email);
 }
 
-int main(int argc, char* argv[]){
-    testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}
-

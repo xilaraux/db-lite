@@ -2,7 +2,6 @@
 #define UTILS_H
 
 #include <iostream>
-using std::cout;
 
 #include <string>
 using std::stoul;
@@ -20,16 +19,15 @@ int parseInsertStatement(const string& target, Row& insertRow) {
   vector<string> words;
 
   for (int i = 0; i < target.length(); i++) {
-    // check if space char
-    if (isspace(target[i])) {
-      string tmp(buffer);
-      words.push_back(tmp);
-      buffer.clear();
-
-      continue;
+    if (!isspace(target[i]) || target[i] != '\t') {
+	    buffer.push_back(target[i]);
+	    continue;
     }
 
-    buffer += target[i];
+    string tmp(buffer);
+    std::cout << tmp << std::endl;
+    words.push_back(tmp);
+    buffer.clear();
   }
 
   // append very last group
