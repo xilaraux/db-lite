@@ -19,15 +19,16 @@ int parseInsertStatement(const string& target, Row& insertRow) {
   vector<string> words;
 
   for (int i = 0; i < target.length(); i++) {
-    if (!isspace(target[i]) || target[i] != '\t') {
+    if (isgraph(target[i])) {
 	    buffer.push_back(target[i]);
 	    continue;
     }
 
-    string tmp(buffer);
-    std::cout << tmp << std::endl;
-    words.push_back(tmp);
-    buffer.clear();
+    if (buffer.length()) {
+	    string tmp = buffer;    
+	    words.push_back(tmp);
+	    buffer.clear();
+    }
   }
 
   // append very last group
