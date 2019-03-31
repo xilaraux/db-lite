@@ -21,7 +21,7 @@ int main() {
 
   while (true) {
     prompt();
-    input.read();
+    input.read(cin);
 
     const string& buffer = input.getBuffer();
 

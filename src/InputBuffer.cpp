@@ -1,15 +1,13 @@
 #include <iostream>
-using std::cin;
-using std::endl;
-using std::cout;
+using std::istream;
 
 #include <string>
 using std::getline;
 
 #include "InputBuffer.h"
 
-void InputBuffer::read() {
-  getline(cin, this->buffer);
+void InputBuffer::read(istream& string_stream) {
+  getline(string_stream, this->buffer);
 }
 
 const string& InputBuffer::getBuffer() const {
