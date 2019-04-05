@@ -8,7 +8,7 @@ SRC_H = $(wildcard src/*.h)
 TESTS = $(wildcard tests/*.cpp)
 TEST_SRC := $(filter-out src/main.cpp, $(SRC_H) $(SRC) $(TESTS))
 ARTIFACT_NAME = bin/db.o
-ARTIFACT_TEST = bin/db_test.o
+ARTIFACT_TEST = bin/test_db.o
 
 build: $(SRC)
 	$(CPP) $(CPP_FLAGS) $(ARTIFACT_NAME) $(SRC)
