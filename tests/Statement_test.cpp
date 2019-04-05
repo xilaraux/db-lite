@@ -36,5 +36,18 @@ TEST(testStatement, Statement){
 	
 	EXPECT_EQ(PREPARE_SUCCESS, result);
 	EXPECT_EQ(STATEMENT_SELECT, statement->getType());
+
+	// Testing statement unrecognized
+	statement = new Statement;
+	ss = new stringstream;
+
+	ss->str("exit");
+	input.read(*ss);
+
+	result = statement->prepareStatement(input);
+
+	EXPECT_EQ(PREPARE_UNRECOGNIZED_STATEMENT, result);
+	EXPECT_EQ(statement->getType(), NULL);
 }
+
 
